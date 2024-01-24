@@ -1,0 +1,659 @@
+:: StoryTitle
+The Pixie's Prank
+
+
+:: StoryData
+{
+  "ifid": "FA6F759B-9796-446B-980A-232E06110836",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "Start",
+  "zoom": 1
+}
+
+
+:: \ Bedroom {"position":"50,350","size":"100,100"}
+You enter your sleeping quarters. How cozy it is with your woolen bed and ornate, stolen trinkets. 
+
+What do you want to do here?
+
+[[Look around -> Bedroom Look]]
+[[Go back to party -> Party]]
+
+
+:: \ Bedroom Look {"position":"50,500","size":"100,100"}
+You're looking at one of your trinkets you found a while ago. It is a beautiful silver necklace that shimmers in the right light. You think back to simpler days, how nice. You rub your finger over the heart-shaped center piece of the necklace in memory. 
+
+Somehow your thumb hits a pressure point in the necklace and it opens up! It's a locket. You open the locket and find one small gold coin. Maybe this journey won't be so bad after all. 
+
+You take the coin and put it in your shirt pocket.
+
+(set: $hasCoin to true)
+
+[[Go back to the party -> Party]]
+
+
+:: \ Big Band {"position":"200,2075","size":"100,100"}
+You've done it, you've actually done it. You have the magick lute, the strong tamborine, and the Siren voice all with you. 
+
+With these items you can bewitch the King and give the best prank that's ever been created. You prepare yourself with the lute, you natural-borne player you, and hand the tamborine to the Siren.
+
+Are you ready to give it to this King?
+
+[[Yea!]]
+
+
+:: \ Castle Back {"position":"300,1375","size":"100,100"}
+You reach your way to the edge wall of the castle. The sewage canals run through here, giving you and your Siren friend a perfect way in. You jump in the gross water and make your way in.
+
+[[Find your way to the king's quarters -> Castle Center]]
+
+
+:: \ Castle Back 2 {"position":"475,1475","size":"100,100"}
+You reach your way to the edge wall of the castle. The sewage canals run through here, giving you a perfect way in. You jump in the gross water and make your way in.
+
+[[Make your way to the King's quarters -> Castle Center]]
+
+
+:: \ Castle Center {"position":"325,1550","size":"100,100"}
+You find yourself just outside of the King's bedroom, where he is most assuredly sleeping. This is the perfect time to pull your prank. 
+
+So, what prank will you do?
+
+(if: ($hasSiren is true) and ($hasLute is true) and ($hasTamborine is true)) [
+[[Give him the old whole big band -> Big Band]]
+]
+
+
+(if: ($hasSiren is false) and ($hasLute is false) and ($hasTamborine is false)) [
+[[Push him out the window -> Pushed out window]]
+]
+
+[[Give him a wet willie]]
+
+
+
+
+:: \ Castle Front 1 {"position":"875,1125","size":"100,100"}
+After a long walk South, you finally make it to the giant front of the Castle Dumnonia. You stare in awe at its vastness and wonder how such a big thing could have been built. The front has more guards, so you'll have to be careful sneaking in. But you have the secret directions that kind person gave you, so you should be fine.
+
+[[Use secret directions to get to king's bedroom -> Castle Center]] 
+
+
+:: \ Character Info {"position":"375,50","size":"100,100"}
+In this life you take on the form of Watt the Pixie, a scrawny,half-a-foot-tall, winged creature who wears a tall pointy hat and has a small form of magick. Recently, a curse has befallen you and taken away your laugh, the most precious thing to pixie-kind. The wizard who cursed you has only given you one clue on how to retrieve your laugh: perform a prank on the great king of Dumnonia, who has not left his castle in years. But how will you get there? And what prank will you choose?
+
+[[Next ->Curse Aftermath]]
+
+
+:: \ Cross River {"position":"625,800","size":"100,100"}
+Phew, that was a close one. You've made it to the other side of the river, despite the wind.
+
+[[Go to castle grounds -> Castle Back 2]]
+
+
+:: \ Drown {"position":"750,775","size":"100,100"}
+You dive into the cold water hoping and praying to the Gods that it can safely guide you to the other side. You realize pixies are not water fairies for a reason, you've never learned to swim. 
+
+The river forces your head to go under, up and down, up and down. The current is just too strong, you realize you can't make it.
+
+The current washes you away.
+
+[[GAME OVER|Start]]
+
+
+:: \ East Wall {"position":"625,175","size":"100,100"}
+It's gets colder the farther along the wall you travel and as a small pixie, you feel the chilly winds even stronger. You flutter your wings faster to try and restore some body heat. You think you hear the echoes of horse hooves in the distance.
+
+[[Keep moving along the wall East -> More East Wall]]
+[[Go back -> Wall]]
+
+
+:: \ East-Most Wall {"position":"750,25","size":"100,100"}
+You walk even further along the wall and before you can take another step-
+
+"Halt!" A guard has spotted you, tiny as you are. The gaurd races on horseback after you, it seems he had been eyeing you for some time now as he has a burlap sack in hand extended out toward you. 
+
+Before you know it, you've been scooped up into the bag; you've been captured by the king's guard.
+
+You pushed your luck too far, even for a pixie.
+
+[[GAME OVER|Start]]
+
+
+:: \ Get Big Fish {"position":"1000,850","size":"100,100"}
+The woman hands you the big fish.
+
+You say, "thank you for the big fish!"  as you accept the fisj. You are able to enchant it to have it fit in your shirt pocket. 
+
+Now where will you go?
+
+[[Back to Town -> Town]]
+[[Go to South-East to the River -> River]]
+
+(set: $hasFish to true)
+(set: $beenToBakery to true)
+
+
+:: \ Guard Tower {"position":"900,175","size":"100,100"}
+As you quietly enter the tall oval entrance of the stone guard tower, you are careful to fly close to the walls and furniture so you may have something to hide behind if the guards come. 
+
+You look around the gaurd tower and notice a glint shine off of something out of the corner of your eye. 
+
+[[Investigate shiny object -> Shiny Object]]
+
+
+
+:: \ Help woman {"position":"950,675","size":"100,100"}
+You decide to be a kind pixie and help the woman out. You sweep, wash dishes, wash the floors, and by the end of it all, you are very tired.
+
+The woman comes back to you and says, "Thank you so much for your help! You know I have this big fish that I've been meaning to give to just the right person. Something tells me you'd want it. Does that sound like an ok deal for a hard days work?"
+
+The deal is a little off you think, but you sure could use a big fish.
+
+[[Agree, accept the big fish -> Get Big Fish]]
+[[Decline, say you'd rather have directions to castle -> Castle Front 1]]
+
+
+:: \ Home {"position":"325,250","size":"100,100"}
+You arrive back at the homely cave where you and your pixie brethen reside. As you head deeper inside the cave, you start to make out a faint light and a raucous laughter. You know you're family dwells inside.
+
+[[Go deeper into cave -> Party]]
+
+
+:: \ Lute\  {"position":"825,650","size":"100,100"}
+You grab the lute and using your magicks, miniaturize its form so it can fit in your shirt pocket. What luck!
+
+Where do you go now?
+
+(set: $hasLute to true)
+
+[[Go back west ->East Path]]
+[[Go farther East -> Town]]
+
+
+:: \ Meet Siren {"position":"325,700","size":"100,100"}
+"Hello?" You call out once more and a blonde lady appears from underneath the swirling river. She has a fair complextion, beautiful green eyes, and most noticably, a cerulean scaled tail. You've heard of this type of fae before, she's a Siren. 
+
+Sirens are known for their glamorous yet violent nature. Be too eager and they may drag you out to sea, never to return. You are not sure how to approach her.
+
+[[Compliment her beauty]]
+[[Ask her what her name is]]
+[[Leave before she has the chance to speak -> River]]
+
+
+:: \ More East Wall {"position":"775,175","size":"100,100"}
+You're very far East along the Wall now. You know this as you have hit the Guard tower. You so close to the end of the wall, but those horse hooves stomps are growing even louder.
+
+[[Look around Guard tower -> Guard Tower]]
+[[Keep along the wall East -> East-Most Wall]]
+[[Go back -> East Wall]]
+
+
+:: \ Orchard {"position":"400,375","size":"100,100"}
+You arrive back at the orchard.
+
+[[Go West back home -> Party]]
+[[Take your chances, go North -> Wall]]
+[[Go South to the river -> River]]
+[[Go farther East ->East Path]]
+
+
+:: \ Party {"position":"175,350","size":"100,100"}
+You arrive at the party. You can see your everyone dancing around a fire and drinking mead. You can make out your best friend Puck flitting among them; he is one of the wisest pixies you know.
+
+Although you are saddened by your current state, a trickle of mead might brighten your spirits.
+
+[[Talk to Puck -> Puck]]
+[[Go to your sleeping quarters -> Bedroom]]
+[[Drink Mead]]
+[[Go back to Orchard -> Orchard]]
+
+
+:: \ Path to Castle {"position":"300,1225","size":"100,100"}
+You walk along the back routes to the castle with the Siren at your side. You cannot wait to dish out your best prank yet on King Constantine.
+
+[[Walk to the back end of the Castle -> Castle Back]]
+
+
+
+:: \ Puck {"position":"175,200","size":"100,100"}
+"Watt, my dear friend, where have you been?" Puck asked. "You've almost missed the summer solstice celebration!"
+
+You gasp, how could you have forgotten! This was a beautiful and momentus time of year for any fairy-folk. But, you cannot focus on the party now.
+
+"Puck, you won't believe the the strangest, most frightful encounter I've had!" You exclaim, looking desparate to tell your tale.
+
+"Well go on then." Puck replies, eager to hear of your day.
+
+You recount the whole sordid affair to Puck, shaking your head forlornely throughout.
+
+"My Gods! Well, you as well as anyone should know pixies have not been into the grand castle in a hundred years. The journey there alone will be difficult for a being of our size."
+
+You nod your head in agreeance. "I understand, but without my laugh, I am like a butterfly clipped of its wings. How can I rejoice in stealing the last bite of pie from a traveling nobleman or giving a traveler directions straight into a mud pit without it?"
+
+Puck gives a solemn look. "Of course there is one thing that is known about King Constantine." Puck darts his head around to make sure no one else is listening and whispers, "the king can be made to do anything under the influence of good song. I've heard the combination of a lute, tamborine, and Siren song would drive him mad."
+
+You think carefully on Puck's advice and thank him.
+
+"Any time old pal!"
+
+[[Go back to the party -> Party]]
+
+
+
+:: \ Pushed out window {"position":"450,1750","size":"100,100"}
+You enter the King's bedroom and scream in his sleeping face. He startles awake and in a daze backs towards his baloncy. You swiftly pursue him, and push the curtains to the balcony out of your way. 
+
+The King has a frightened look on his face and you give him one more look. You press one finger to his right shoulder, and in his already precarious position is pushed from the balcony. A loud thud can be heard even from all the way up here.
+
+The noise awakens his guards. Quick, what do you do?
+
+[[Fly across the balcony]]
+[[Look for a weapon to use]]
+
+
+:: \ Right of River {"position":"650,500","size":"100,100"}
+You follow the river's path eastward and it seems to be neverending. It looks like this river encapsulates the entire castle, there's no going around. Your wings are started to get tired.
+
+[[Go back west -> River]]
+[[Go North ->East Path]]
+
+
+:: \ River {"position":"475,500","size":"100,100"}
+You come to up to the silent water's edge. You even think you can see the castle way out in the distance. This is quite a large river that normally a pixie like you would be able to fly across, but since your laughter has gone, some of your magick has gone with it.
+
+[[Look around]]
+[[Go back to the orchard -> Orchard]]
+[[Try to go around the river -> Right of River]]
+[[Try to fly across river anyway ->Fly across anyway]]
+
+
+:: \ Run to Castle {"position":"475,1275","size":"100,100"}
+You walk alone to the castle, only feeling slightly bad about scamming the Siren.
+
+[[Get to the back end of the castle -> Castle Back 2]]
+
+
+:: \ Scam Siren {"position":"450,1050","size":"100,100"}
+"You know I actually already have one of those fish, it's just magcked away in my pocket right now. I could give it to you once you've taken me across the river." 
+
+Thelxiepeia eyes you warily. "Alright Watt, I am trusting you, do not disappoint me."
+
+The Siren extends a hand out to you and you take it. She swims you across the river, it is a quiet day, if a bit breezy. Once she makes it to the other side, she places you safely grassy edge.
+
+She looks at you pointedly, waiting for her compensation. You are sweating profusely.
+
+[[Run away as fast as you can -> Run to Castle]]
+[[Try to talk you way out of this -> Talk to Scammed Siren]]
+
+
+:: \ Shiny Object {"position":"900,25","size":"100,100"}
+You approach where you think you saw the glint come from. You flutter slowly to the table where you believe the object may be. The guards don't clean very well down here, so everything is dusty and covered with cobwebs. You blow some cobwebs off of the shiny object and it makes a noise.
+
+[[Pick up object -> Tamborine]]
+
+
+:: \ Siren Dream {"position":"825,2125","size":"100,100"}
+You ask what she's thinking about.
+
+"I've been in this river for so long, I haven't ever been to the castle grounds. I've always wanted to share my song there. I just thought since you're going, maybe I could join you?" 
+
+You smile and say, "Of course, it'd be my pleasure!" And with your combined changeling magick, you are able to transform the Siren to have some perfectly working legs. You're able work a leaf dress together from the trees as well.
+
+Now that you've got the Siren by your side, you're feeling hopeful about the rest of this trip!
+
+[[Make your way to the castle -> Path to Castle]]
+
+(set: $hasSiren to true)
+
+
+:: \ Siren Kills You {"position":"200,700","size":"100,100"}
+"You little parasite, now I won't feel bad about eating you." You stare in horror as the Siren grabs you by your shirt and yanks you into the cold water. 
+
+You claw at her arms, but her skin is reinforced with small scales that form a protective barrier. She drags you deeper and deeper into the river until you black out, unable to hold your breath any longer. 
+
+Well, that's unfortunate.
+
+[[GAME OVER|Start]]
+
+
+:: \ Talk to Scammed Siren {"position":"650,1075","size":"100,100"}
+Before you open your mouth, the Siren can sense something is amiss. She smiles and calmly asks, "Where is my fish?"
+
+You have a couple lies you can tell, but none are coming forth right now.
+
+"Um, what fish?"
+
+[[That's it, the Siren is done -> Siren Kills You]]
+
+
+:: \ Tamborine {"position":"1025,25","size":"100,100"}
+You inspect the object and are delighted to hear the shake of a tamborine! What good fortune, you are on the way to recovering your laugh after all. 
+
+You magickally miniaturize the tamborine and put it in one of your shirt pockets.
+
+(set: $hasTamborine to true)
+
+[[Go back to the beginning of the wall -> Wall]]
+
+
+:: \ Town {"position":"950,325","size":"100,100"}
+You enter the town of Exmouth and are greeted by kind faces. You see people selling their wares in dirt street and many different establishments lining the sides. 
+
+The king's influence is not too great here, so you are less worried about how the townspeople with percieve you. However, that does not mean the town is not without dangers. Being close to the North wall means that the King's guards sometimes wander in through town.
+
+You see a couple buildings that stand out, some that bring no doubt bring out seedier people than others. Where do you want to go?
+
+(if: $beenToBakery is false)[
+[[Bakery]]
+]
+(if: $beenToBar is false)[
+[[Bar]]
+]
+
+[[Go back -> Wishing Well]] 
+
+
+:: \ Wall {"position":"500,175","size":"100,100"}
+You arrive at the Great Wall of Dumnonia which contains all of the Kingdom of Dumnonia. The king's gaurds are known to patrol these areas, either on horseback or on foot. The new king does not take too kindly to fairy-folk of any kind, something to do with the queen cheating on the king with a satyr, you'd rather not get into it. 
+
+Anyway, you know to be cautious around the knights and loyal followers of the crown. The more you think about it, while the guards are frightening, they are known to drink on the job and who knows, they might even leave some things behind. 
+
+What do you do?
+
+[[Keep to the wall, go East -> East Wall]]
+[[Return back to the orchard -> Orchard]]
+
+
+
+
+:: \ Wish Granted {"position":"800,450","size":"100,100"}
+You stand on the edge of the well's wall. As you flip the gold coin into the well, you murmur, "Please o please, blest me a way to retrieve mine own laughter back." You hear the coin make a 'plip' sound as it drops into the dry stone at the bottom.
+
+A beat passes and the rope holding the bucket at the bottom of the well starts whirring by. The rope is being pulled by a strange force and is lifting the bucket from the bottom of the well!
+
+Your small heart pounds in you ears as you watch the rope race upwards, right until it stops. A rusty bucket is now eye level with you and you can see something sticking out of it. By George! It's a lute! 
+
+[[Take the lute -> Lute ]]
+
+
+:: \ Wishing Well {"position":"800,325","size":"100,100"}
+You happen across an old stone wishing well.  It looks like it hasn't been used in years. Maybe some extra luck will do you good.
+
+[[Keep Travelling East -> Town]]
+[[Go back west ->East Path]]
+
+(if: $hasCoin is true)[
+[[Throw coin into the well -> Wish Granted]]
+]
+
+
+:: \ Woman Sad {"position":"1100,725","size":"100,100"}
+"Oh ok, that's fine. Feel free to buy a pie if you'd like." You don't have any money right now, but you snag a piece of pie that someone else left out and you're on your way.
+
+[[Go back to town -> Town]]
+
+(set: $beenToBakery to true)
+
+
+:: \ Woman responds {"position":"1075,550","size":"100,100"}
+The woman looks you deep in the eyes and asks, "you know little man, I have some chores here I need to get done. I'm just so busy with all this baking, baking, baking. It feels like I never have a break! So what do you say, will you help me out?"
+
+This woman barely knows you and is asking for your help! I mean she seems nice, maybe there's a reward?
+
+[[Say no thanks, you have important things to do -> Woman Sad]]
+[[Say ok sure -> Help woman]]
+
+
+:: Ask her what her name is {"position":"325,925","size":"100,100"}
+"What's your name?" You ask politely.
+
+"My name is Thelxiepeia." She holds an air of confidence and power about her when she answers you. 
+
+"It's nice to meet you, Thelxiepeia. I'm Watt."
+
+You move on to say, "I'm trying to get across this river, is there any way you can help?"
+
+She considers you as she looks you up and down, from your pointed shoes to your shock of white hair under that tall, pointy hat, and says, "I suppose I could... for a price."
+
+You ask what she means by that and she replies, "Well, I have heard the townsfolk east of here have a great lake that they capture all their fish from. This river does not connect to there, so I've never been able to try it. If you can fetch that for me, I will consider bringing you across the river."
+
+(if: $hasFish is true) [
+[[Give her big fish]]
+]
+
+(if: $hasFish is false)[
+[[Ok, I shall return soon! -> River]]
+]
+
+[[Scam Thelxiepeia -> Scam Siren]]
+
+
+
+:: Bakery {"position":"925,525","size":"100,100"}
+You approach the front of the cute bakery. You can already smell the fresh notes of strawberries, spices, and warm dough. 
+
+You fly in through the front door and are greeted by a woman.
+
+"Oh my goodness! Now aren't you a precious little thing! What a cutie you are!" The woman nearly shrieks as she spots you. She runs over and starts pinching your cheeks.
+
+Taken aback by this woman's overenthusiasm, you are at a stand still.
+
+How do you respond?
+
+[[Bite her finger]]
+[[Thank her for her kind words -> Woman responds]]
+[[Wait until she's done doing whatever she is doing -> Woman responds]]
+
+
+:: Bar {"position":"1050,200","size":"100,100"}
+You go to the bar as you'd like to relax after traveling all this way. After all, this is pretty far from your home cave. There's a bar to the right with a bald headed man tending it and a couple patrons at the tables to the left. It is mid-day, so it's no surprise the place is pretty empty.
+
+You see a surly man sipping on a glass of whiskey at the bar.
+
+Who do you approach?
+
+[[Talk to the man at the bar]]
+[[Talk to the bar tender]]
+
+
+:: Bite her finger {"position":"1100,375","size":"100,100"}
+You aggressively and deeply bite down into her thumb. Immediately the woman gives out a blood-curdling scream even louder than her previous shrieks. 
+
+Unfortunately her scream alerts a King's guard who happened to be in the bar the next door over. The guard rushes down the door, breaking the hinges off their seams.
+
+The King has a strict capture on sight policy for all fairies. You feel your stomach drop and just as quickly the knight takes a large bakers bowl and slams it down on top of you, encasing you in it.
+
+You're going to fairy jail.
+
+[[GAME OVER|Start]]
+
+
+:: Compliment her beauty {"position":"450,925","size":"100,100"}
+You tell the Siren she is one of the most gorgeous fae you have ever set your eyes on. She looks bored and says nothing. Ok, you made things a bit awkward. You wait while trying to think of something to say to her. Suddenly, she begins to speak, allowing you to see her razor sharp teeth. 
+
+"Sigh, another fairy who only cares about my looks. Is that really all we Siren are to you, a pretty face?"
+
+[[Well of course, I thought that was obvious -> Siren Kills You]]
+[[Of course not! We got off on the wrong foot, let me start over ->Ask her what her name is]]
+
+
+:: Curse Aftermath {"position":"575,25","size":"100,100"}
+"Ugh, my head, sorest it be" You say with a slight scowl on your face. Fowl magicks have the tendency to give you a wicked headache. You look around and see that you are in the apple orchard a bit aways from home, it looks like that spell knocked you out for a few hours. You remember what the wizard said you need to do. 
+
+You don't want your family to worry where you are and you've never gone farther east from home than this orchard. On the other hand, this is an urgent matter that needs taking care of.
+
+So, where do you go from here?
+
+[[Go West back home -> Home]]
+[[Take your chances, go North -> Wall]]
+[[Go South to the river -> River]]
+[[Go farther East ->East Path]]
+
+(set:$hasLute to false)
+(set:$hasTamborine to false)
+(set:$hasSiren to false)
+(set:$hasCoin to false)
+(set:$hasFish to false)
+(set: $beenToBakery to False)
+(set: $beenToBar to False)
+
+
+:: Drink Entire Barrel of Mead {"position":"350,500","size":"100,100"}
+You can feel the tips of your pointed ears burning red and the ever-so slight feeling of nausea you're hardly keeping at bay. You have drank way too much to go on any journey. You crash in your warm cozy bed of feathers and hay, and think "oh well, who needs laughter anyway."
+
+You have a really bad hangover the next day.
+
+[[GAME OVER|Start]]
+
+
+:: Drink Mead {"position":"175,500","size":"100,100"}
+You try to forget your sorrows and drink a pint of the finest mead pixies have to offer. It works a little bit. 
+
+Maybe you could go for another.
+
+[[Drink Entire Barrel of Mead]]
+[[You've had enough for now, head back to the party -> Party]]
+
+
+:: East Path {"position":"650,325","size":"100,100"}
+As you travel along the summery grasses of the moors, you appreciate each gentle breeze that swings by. You can hear the birds chirping along joyfully, and one even makes a sound identical to that of high pitched old lady telling off her grandchildren. This thought makes amuses you, you begin to open your mouth and nothing. Nothing happens and the feeling of amusement left as soon as it came. 
+
+You've got to get to that castle.
+
+[[Keep traveling East -> Wishing Well]]
+[[Go back to the Orchard -> Orchard]]
+
+
+:: Fly across anyway {"position":"625,650","size":"100,100"}
+You start your way across the river, flapping your wings hard at first. 
+
+You're halfway there when suddenly a strong gust of wind blows across the river, throwing off your balance. In your weakened state, you struggle against the daggers of air being thrown at you. 
+
+You're in trouble here, what should you do?
+
+[[Use every ounce of strength, keep flying -> Cross River]]
+[[Dive into water, maybe you can swim -> Drown]]
+
+
+:: Fly across the balcony {"position":"425,1900","size":"100,100"}
+You fly across the balcony and into the room of another nobleperson. You should be safe to hide here. You wander quietly out of the castle and back into the outside. 
+
+You remember what the wizard said. Somehow, you don't think murdering the King is what the wizard meant by prank. You don't feel much like laughing anyhow. Well, there goes that dream you guess.
+
+[[BAD ENDING|Start]]
+
+
+:: Give her big fish {"position":"325,1050","size":"100,100"}
+You pull out the fish in your pocket to present to the Siren.
+
+"Ta-da! Here is your fish!" She takes a look at the big fish and grins ear to ear.
+
+"Amazing! You really brought me that big fish!" She exclaims. You hand her the big fish and she gulps it down in one bite. "Ok, now I'm ready to take you across the river, come here." You walk to her and she gently holds on to you as she prepares to swim.
+
+The Siren elegantly swims across the river and as she swims backstroke with you sitting on her stomach, you both start to share about your lives. You tell Thelxiepeia your whole sordid affair and she commiserates about her loneliness with you.
+
+The conversation is over all too soon and she brings you to the other side of the river with ease. She places you down on the grassy edge. 
+
+You notice she has an inquisitive look on her face.
+
+[[Ask what she's thinking about -> Siren Dream]]
+[[Thank her and be on your way -> Castle Back 2]]
+
+
+
+:: Give him a wet willie {"position":"300,1775","size":"100,100"}
+You sneakily open the the door to the King's room and see him resting soundly. You slowly tip toe over to his bedside where he is snoring deeply. 
+
+You take your pointer finger and swirl it around in your mouth, making sure its coated evenly. "Yup" You think, "this is gonna be hilarious."
+
+You jam that sucker in the King's ear and just as quickly fly above his canopy bed to hide.
+
+"YOWWWWWWWWW" The King blurts out. The King is bewildered by this strange sensation and yet there is no perpetrator to be found. This idea fills up in your head, your chest starts to feel tight and your smile starts wobbling. 
+
+You burst out laughing!  The wizard delivered on his promise, your laugh is back! 
+
+You high tail it out of the King's room and make the journey back to your lovely cave home. You walk tired and at ease to your simple bedroom and glide down into bed. That night, you have the best rest you've had in a long while.
+
+[[GOOD ENDING|Start]]
+
+
+:: I'm sure {"position":"1325,100","size":"100,100"}
+"Sir, please I have a few questions if you could be so kind." The surly man stops you right there. He whistles and a King's guard comes rounding in. Of course, one of the only guys in this town that loves the King. The guard spots you and grabs you by the hair.
+
+"Ouch! Hey watch it!" You yell. But it's no use, the King has foiled your plans, even if unknowingly.
+
+[[GAME OVER|Start]]
+
+
+:: Look around {"position":"500,650","size":"100,100"}
+You look into the pure blue water that runs in the river. You've heard the tales that long ago fairy-kind divulged into two species: those who live in water and those who live on land. You wonder if any fairies live here.
+
+[[Call out to see if anyone responds ->See Sirens]]
+[[ Go back to Orchard -> Orchard]]
+
+
+:: Look for a weapon to use {"position":"575,1900","size":"100,100"}
+You look for a weapon to use against the guards, but it's too late. They've descended upon you and you're in their grasp. Although you've killed the King, surely your execution will be next.
+
+[[GAME OVER|Start]]
+
+
+:: See Sirens {"position":"500,775","size":"100,100"}
+"Hello? Is anyone here?" You call out to the river. You hear a splash and catch a glimpse of opalescent scales.
+
+Slowly, a blonde hair peeks out of the water.
+
+[[Call out again -> Meet Siren]]
+
+
+:: Start {"position":"200,50","size":"100,100"}
+Hark! Ye who goes there, be wary, for the adventure you may soon embark on is filled with tricks, tribulations, and triumphs. 
+
+[[Next -> Character Info]]
+
+
+:: Talk to the bar tender {"position":"1175,250","size":"100,100"}
+You sidle up the seat at the bar, they're a little too big for you, but you make do. You wait for the bar tender to finish cleaning out a class and make eye contact with him.
+
+You ask, "Know how to get to the Dumnonia castle?"
+
+The bald man looks at you and his gruff appearance slightly turns to one of fondness, before returning to his normal state. Maybe this man has a soft spot for fairies. His gravelly voice replies, "I guess I could explain the way to you."
+
+You're in luck. He gives you step by step directions on how to get to the front of the castle. 
+You can be on your way as soon as possible.
+
+[[Follow the bar tender's directions -> Castle Front 1]]
+
+(set: $beenToBar to true)
+
+
+:: Talk to the man at the bar {"position":"1175,100","size":"100,100"}
+"Hi there sir, how are you?" You greet the man at the bar. He takes one look at you and mad-dogs you. That's not a great sign. 
+
+Are you sure you want to keep talking to this guy?
+
+[[I'm sure]]
+[[No way ->Bar]]
+
+
+:: Yea! {"position":"500,2200","size":"100,100"}
+A one, a two, a one two three four! Your storm into the King's bedroom with the fine melody your lute accompanying the Siren's beautiful voice with a backing tamborine behind it. The King is enchanted with the song, completely under its spell. You can make him do anything you want and you know just what to do.
+
+You lead the King into the town square, all along the way playing. The townspeople stir from their sleep and end up following beside. 
+
+Finally you get the King to stand smack dab in the center through the suggestion of song.
+You make the King dance and groove as hard as he can in front of his people! This is a spectacle never before thought of. The King in his pajamas and his ridiculous dance moves make the people burst into the laughter. The King is so dazed, he has no idea this is not another one of his dreams. 
+
+All of this laughter fills you with a great emotion that keeps building, and building, and building until suddenly- "HAHAHAHHA" You let out a triumphant laugh! It's back, it's back! The wizard kept true to the curse's cure, you can laugh once more! 
+
+The night goes on and on with all the people laughing at the king and enjoying your song. At the end of it all you feel like you've brought a great night to this place. Not only has your laughter returned, but it seems you have gained the favor of the townspeople. They do not seem to dislike the presence of your pixie nature as much as before this prank. It seems like this will be a great new beginning for the kingdom.
+
+[[BEST ENDING|Start]]
+
+
+:: StoryStylesheet [stylesheet]
+tw-passage {
+  text-align: center;
+}
